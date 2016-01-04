@@ -1,8 +1,6 @@
-# webpack-block-loader
+# block-loader
 
-A webpack loader for doing generic block-processing.
-
-You provide the delimiters and processor, block-loader will find your data and pass it through your processor.
+A webpack loader for doing generic block-processing. You provide the delimiters and processor, block-loader will find your data and pass it through your processor.
 
 ## Install
 ```
