@@ -41,8 +41,10 @@ module.exports = function(options) {
       this.cacheable();
     }
     if (!hasBlocks(source)) return source;
-    if (options.preprocess) {
-      source = options.preprocess(source);
+    if (options.preprocessors) {
+      options.preprocessors.forEach(function(process) {
+        source = process(source);
+      });
     }
     return processData(source);
   };
