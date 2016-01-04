@@ -27,9 +27,11 @@ module.exports = blockLoader(options);
 
 `op` and `ed` are delimiter strings for you data block, `preprocessors` is optional and takes an array of `function(content)`.
 
-## Example:  "write normal code in `<pre>` elements"
+## Example: write real code in "pre" elements
 
-Say you need to write real code in `<pre>` elements, and don't want your Webpack/React build to break on using things like `<`. Let's write a loader that'll fix those things for us:
+Say you need to write real programming code in `<pre>` elements, and you want to just write code, not hand-craft every html entity for less than or ampersand symbols just so your Webpack/React build won't bread on them.
+
+Let's just write a quick and easy loader that'll fix those things for us:
 
 ```
 var blockLoader = require("./block-loader");
