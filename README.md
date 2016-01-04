@@ -25,7 +25,7 @@ module.exports = blockLoader(options);
 
 `op` and `ed` are delimiter strings for you data block, `preprocessors` is optional and takes an array of `function(content)`.
 
-## Examples:  "write normal code in <pre> elements"
+## Examples:  "write normal code in `<pre>` elements"
 
 Say you need to write real code in `<pre>` elements, and don't want your Webpack/React build to break on using things like `<`. Let's write a loader that'll fix those things for us:
 
