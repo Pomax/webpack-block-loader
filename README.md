@@ -11,8 +11,8 @@ npm install block-loader
 ```
 var blockLoader = require('block-loader');
 var options = {
-  op: '...',
-  ed: '...',
+  start: '...',
+  end: '...',
   preprocessors: [
     function(content) { ...; return content; },
     ...
@@ -25,7 +25,7 @@ var options = {
 module.exports = blockLoader(options);
 ```
 
-`op` and `ed` are delimiter strings for you data block, `preprocessors` is optional and takes an array of `function(content)`.
+`start` and `end` are delimiter strings for you data block, `preprocessors` is optional and takes an array of `function(content)`.
 
 ## Example: write real code in "pre" elements
 
@@ -36,8 +36,8 @@ Let's just write a quick and easy loader that'll fix those things for us:
 ```
 var blockLoader = require("./block-loader");
 var options = {
-  op: "<pre>",
-  ed: "</pre>",
+  start: "<pre>",
+  end: "</pre>",
   process: function fixPreBlocks(pre) {
     return pre
     .replace(/&/g,'&amp;')       // 1. use html entity equivalent,
