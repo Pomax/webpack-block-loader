@@ -11,10 +11,14 @@ npm install block-loader
 ```
 var blockLoader = require('block-loader');
 var options = {
-  op: "\\[",
-  ed: "\\]",
-  preprocessors: []
+  op: '...',
+  ed: '...',
+  preprocessors: [
+    function(content) { ...; return content; },
+    ...
+  ],
   process: function(content) {
+   ...
     return content;
   }
 };
