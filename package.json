@@ -1,0 +1,23 @@
+{
+  "name": "block-loader",
+  "version": "1.0.0",
+  "description": "A webpack loader for doing generic block-processing. You provide the delimiters and processor, block-loader will find your data and pass it through your processor.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Pomax/webpack-block-loader.git"
+  },
+  "keywords": [
+    "webpack",
+    "loader"
+  ],
+  "author": "Pomax",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Pomax/webpack-block-loader/issues"
+  },
+  "homepage": "https://github.com/Pomax/webpack-block-loader#readme"
+}
