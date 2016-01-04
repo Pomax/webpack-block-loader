@@ -40,7 +40,7 @@ var options = {
     .replace(/</g,'&lt;')        // 2. use html entity equivalent,
     .replace(/>/g,'&gt;')        // 3. use html entity equivalent,
     .replace(/([{}])/g,"{'$1'}") // 4. JSX-safify curly braces,
-    .replace(/\n/g,"{'\\n'}");   // 5. and preset newlines, thanks.
+    .replace(/\n/g,"{'\\n'}");   // 5. and preserve line endings, thanks.
   }
 };
 module.exports = blockLoader(options);
