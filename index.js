@@ -3,15 +3,15 @@
  * any user-specified opening and closing string.
  */
 module.exports = function(options) {
-  var op = options.op;
-  var ed = options.ed;
+  var start = options.start;
+  var end = options.end;
   var process = options.process || function(){};
 
   /**
    * Is there going to be anything to convert here?
    */
   function hasBlocks(input) {
-    return input.indexOf(op) !== -1 && input.indexOf(ed) !== -1;
+    return input.indexOf(start) !== -1 && input.indexOf(end) !== -1;
   }
 
   /**
@@ -21,14 +21,14 @@ module.exports = function(options) {
     // we can't do this with regexp, unfortunately.
     var from = 0, curr, term;
     var newsource = "", blockContent;
-    for(curr = source.indexOf(op, from); curr !== -1; from = term + ed.length, curr = source.indexOf(op, from)) {
+    for(curr = source.indexOf(op, from); curr !== -1; from = term + end.length, curr = source.indexOf(start, from)) {
       newsource += source.substring(from, curr);
-      term = source.indexOf(ed, from);
+      term = source.indexOf(end, from);
       if(term === -1) {
         // that's a problem...
-        throw new Error("Block opened by "+op+" found without matching ending "+ed);
+        throw new Error("Block opened by "+start+" found without matching ending "+end);
       }
-      newsource += process(source.substring(curr, term + ed.length));
+      newsource += process(source.substring(curr, term + end.length));
     }
     return newsource + source.substring(from);
   };
