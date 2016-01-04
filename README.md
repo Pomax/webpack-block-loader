@@ -67,4 +67,4 @@ module.exports = {
 };
 
 ```
-Remember that webpack loaders run LIFO, so the ones that need to come earlier come later in the array of loaders.
+Remember that webpack loaders run LIFO, so the ones that need to kick in first need to be declared last in the array of loaders.
