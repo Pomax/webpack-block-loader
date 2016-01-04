@@ -21,7 +21,7 @@ module.exports = function(options) {
     // we can't do this with regexp, unfortunately.
     var from = 0, curr, term;
     var newsource = "", blockContent;
-    for(curr = source.indexOf(op, from); curr !== -1; from = term + end.length, curr = source.indexOf(start, from)) {
+    for(curr = source.indexOf(start, from); curr !== -1; from = term + end.length, curr = source.indexOf(start, from)) {
       newsource += source.substring(from, curr);
       term = source.indexOf(end, from);
       if(term === -1) {
