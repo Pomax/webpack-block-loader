@@ -38,7 +38,9 @@ module.exports = function(options) {
    **/
   return function(source) {
     if (options.cacheable !== false) {
-      this.cacheable();
+      if (this.cacheable) {
+        this.cacheable();
+      }
     }
     if (!hasBlocks(source)) return source;
     if (options.preprocessors) {
