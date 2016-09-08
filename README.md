@@ -34,7 +34,7 @@ Say you need to write real programming code in `<pre>` elements, and you want to
 Let's just write a quick and easy loader that'll fix those things for us:
 
 ```
-var blockLoader = require("./block-loader");
+var blockLoader = require("block-loader");
 var options = {
   start: "<pre>",
   end: "</pre>",
